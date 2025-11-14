@@ -74,6 +74,7 @@
           preBuild = ''
             export CUDA_HOME="${pkgs.cudaPackages.cuda_nvcc}"
             export TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;8.9;9.0"
+            export NIX_CFLAGS_COMPILE="-I${pkgs.cudaPackages.cuda_nvcc}/include -I${pkgs.cudaPackages.libcurand}/include $NIX_CFLAGS_COMPILE"
           '';
 
           meta = with pkgs.lib; {
