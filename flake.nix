@@ -17,7 +17,14 @@
           };
         };
 
-        pythonPackages = pkgs.python311Packages;
+        # Override python packages to disable tests that require network access
+        pythonPackages = pkgs.python311Packages.override {
+          overrides = self: super: {
+            websockets = super.websockets.overridePythonAttrs (old: {
+              doCheck = false;
+            });
+          };
+        };
 
         exllamav2 = pythonPackages.buildPythonPackage rec {
           pname = "exllamav2";
