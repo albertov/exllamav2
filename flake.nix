@@ -46,7 +46,7 @@
             wheel
             setuptools
             fastparquet
-            pytorch-bin
+            torch-bin
             safetensors
             pygments
             websockets
@@ -89,7 +89,7 @@
               wheel
               setuptools
               fastparquet
-              pytorch-bin
+              torch-bin
               safetensors
               pygments
               websockets
