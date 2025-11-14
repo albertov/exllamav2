@@ -46,6 +46,7 @@
             cudaPackages.cuda_cudart
             cudaPackages.libcublas
             cudaPackages.libcusparse
+            cudaPackages.libcusolver
           ];
 
           propagatedBuildInputs = with pythonPackages; [
@@ -111,6 +112,7 @@
             pkgs.cudaPackages.cuda_cudart
             pkgs.cudaPackages.libcublas
             pkgs.cudaPackages.libcusparse
+            pkgs.cudaPackages.libcusolver
             pkgs.ninja
             pkgs.git
           ];
@@ -121,6 +123,7 @@
               pkgs.cudaPackages.cuda_cudart
               pkgs.cudaPackages.libcublas
               pkgs.cudaPackages.libcusparse
+              pkgs.cudaPackages.libcusolver
               pkgs.stdenv.cc.cc.lib
             ]}:$LD_LIBRARY_PATH"
             export TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;8.9;9.0"
